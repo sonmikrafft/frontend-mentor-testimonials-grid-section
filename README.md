@@ -24,7 +24,6 @@ Users should be able to:
 ### Screenshot
 
 ![Desktop](./screenshots/desktop.png)
-![Tablet](./screenshots/tablet.png)
 ![Mobile](./screenshots/mobile.png)
 
 
@@ -43,29 +42,57 @@ Use this section to recap over some of your major learnings while working throug
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+- Grid:
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: "violet_item" "gray_item" "white_item" "black_item" "white2_item";
+
+  @include breakpoint-up(large) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "violet_item violet_item gray_item white2_item" "white_item black_item black_item white2_item";
+  }
+  
+  &__item {
+    border-radius: 0.5rem;
+    padding: 1.5rem 1.75rem;
+  }
+}
+
+.violet {
+  grid-area: violet_item; 
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+- Background-Image behind text:
+```css
+.violet {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background-image: url("/images/bg-pattern-quotation.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0rem;
+    right: 1rem;
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  &__text {
+    position: relative; 
+  }
 }
 ```
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [An Interactive Guide to CSS Grid](https://www.joshwcomeau.com/css/interactive-guide-to-grid/) 
 
 
 ## Author
-
-
 
 - Github - [Sonja Krafft](https://www.github.com/sonmikrafft)
 - Frontend Mentor - [@sonmikrafft](https://www.frontendmentor.io/profile/sonmikrafft)

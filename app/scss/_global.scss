@@ -8,37 +8,17 @@ html {
 }
 
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
   text-align: left;
   font-size: $font-m;
   font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: $font-weight-m;
+  font-weight: $font-weight-s;
   color: $very-dark-blackish-blue;
-  line-height: 1.75;
+  line-height: 1.5;
 
-  h1, h2 {
+  .text_bold {
     font-weight: $font-weight-m;
-    color: black;
-    margin: 0;
-  }
-
-  h1{
-    font-size: $font-h1-s;
-
-    @include breakpoint-up(medium) {
-      font-size: $font-h1-l;
-    }
-  }
-
-  h2 {
-    font-size: $font-h2;
-
-  }
-
-  .text_thin {
-    font-weight: $font-weight-s;
   }
 
   .attribution {

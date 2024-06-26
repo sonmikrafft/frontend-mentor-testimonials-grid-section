@@ -1,9 +1,132 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4.875rem 2rem;
+  padding: 3rem 2rem;
   background-color: $light-grayish-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint-up(large) {
+    height: 100vh;
+  }
 }
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: "violet_item" "gray_item" "white_item" "black_item" "white2_item";
+
+  @include breakpoint-up(large) {
+    width: 69.375rem;
+    height:38.75rem;
+    gap: 1.875rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "violet_item violet_item gray_item white2_item" "white_item black_item black_item white2_item";
+  }
+
+  &__item {
+    border-radius: 0.5rem;
+    padding: 1.5rem 1.75rem;
+  }
+}
+
+.violet {
+  grid-area: violet_item;
+  background-color: $moderate-violet;
+  color: $white;
+  position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url("/images/bg-pattern-quotation.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      top: 0rem;
+      right: 1rem;
+      width: 6.5rem;
+      height: 6.5rem;
+
+      @include breakpoint-up(large) {
+        right: 3.5rem;
+      }
+    }
+}
+
+.gray {
+  grid-area: gray_item;
+  background-color: $very-dark-grayish-blue;
+  color: $white;
+}
+
+.white {
+  grid-area: white_item;
+  background-color: $white;
+}
+
+.white2 {
+  grid-area: white2_item;
+  background-color: $white;
+}
+
+.black {
+  grid-area: black_item;
+  background-color: $very-dark-blackish-blue;
+  color: $white;
+}
+
+.testimonial {
+
+  &__profile {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__icon {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      //background-size: cover;
+    }
+  }
+
+  &__occupation {
+    opacity: 50%;
+    font-size: $font-s;
+
+  }
+
+  &__short {
+    padding: 1rem 0;
+    font-size: $font-l;
+    line-height: 1.3;
+    position: relative; // such that background-image is between background and text
+  }
+
+  &__long {
+    opacity: 70%;
+  }
+}
+
+.violet-border {
+  border: 2px solid $light-violet;
+}
+
+.white-border {
+  border: 2px solid $white;
+}
+
+.gray-border {
+  border: 2px solid $very-dark-grayish-blue;
+}
+
+
+
+
+
 
