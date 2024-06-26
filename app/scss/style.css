@@ -1,0 +1,58 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 0.9375rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  color: hsl(219, 29%, 14%);
+  line-height: 1.75;
+}
+body h1, body h2 {
+  font-weight: 600;
+  color: black;
+  margin: 0;
+}
+body h1 {
+  font-size: 1.5em;
+}
+@media (min-width: 40em) {
+  body h1 {
+    font-size: 2em;
+  }
+}
+body h2 {
+  font-size: 1.375rem;
+}
+body .text_thin {
+  font-weight: 500;
+}
+body .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: black;
+}
+body .attribution a {
+  color: hsl(263, 55%, 52%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4.875rem 2rem;
+  background-color: hsl(210, 46%, 95%);
+}
+
+/*# sourceMappingURL=style.css.map */
